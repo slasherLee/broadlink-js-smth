@@ -589,6 +589,9 @@ device.prototype.sp2 = function() {
                 var pwr = Boolean(payload[0x4]);
                 this.emit("power", pwr);
                 break;
+            case 2: //return from set_power
+                this.emit("done");
+		break;
             case 3:
                 console.log('case 3');
                 break;
